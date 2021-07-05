@@ -1,3 +1,5 @@
+![alt text](https://github.com/RomanVinichenko/taskPage/blob/master/app/images/test.jpg)
+
 # Task: Test Page
 
 To start project you must have installed Node JS on your local PC
