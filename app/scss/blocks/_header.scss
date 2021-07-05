@@ -4,6 +4,13 @@
   padding-top: 19px;
   width: 100%;
 
+  .logo__img {
+    @include r($sm) {
+      width: 165px;
+      height: 50px;
+    }
+  }
+
   .menu {
     display: flex;
     justify-content: space-between;
@@ -12,12 +19,44 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin: 0 10px;
       width: 100%;
       max-width: 695px;
+
+      @include r($xl) {
+        max-width: 580px;
+      }
+
+      @include r($lg) {
+        justify-content: space-around;
+        order: 3;
+        margin-top: 15px;
+        width: 100%;
+        max-width: 999px;
+      }
+
+      @include r($md) {
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%;
+      }
+
+      @include r($sm) {
+        margin: 10px 0 0;
+      }
     }
 
     &__item {
       text-align: center;
+
+      @include r($md) {
+        margin: 0 5px 15px;
+        width: 150px;
+      }
+
+      @include r($sm) {
+        margin: 0 0 8px;
+      }
     }
 
     &__title {
@@ -48,6 +87,23 @@
       &:hover {
         background-color: $accent;
       }
+
+      @include r($sm) {
+        padding: 5px;
+        height: 40px;
+      }
     }
+
+    @include r($lg) {
+      flex-wrap: wrap;
+    }
+
+    @include r($sm) {
+      align-items: center;
+    }
+  }
+
+  @include r($sm) {
+    padding-top: 5px;
   }
 }
