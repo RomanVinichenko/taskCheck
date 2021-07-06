@@ -1,6 +1,116 @@
+.header {
+  padding-top: 19px;
+  @include r($lg) {
+    margin-bottom: 5px;
+  }
+
+  .logo__img {
+    @include r($sm) {
+      width: 135px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 10px;
+      width: 100%;
+      max-width: 695px;
+
+      @include r($xl) {
+        max-width: 580px;
+      }
+
+      @include r($lg) {
+        justify-content: space-around;
+        order: 3;
+        margin-top: 15px;
+        width: 100%;
+        max-width: 999px;
+      }
+
+      @include r($md) {
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%;
+      }
+
+      @include r($sm) {
+        margin: 10px 0 0;
+      }
+    }
+
+    &__item {
+      text-align: center;
+
+      @include r($md) {
+        margin: 0 5px 15px;
+        width: 150px;
+      }
+
+      @include r($sm) {
+        margin: 0 0 8px;
+      }
+    }
+
+    &__title {
+      font-weight: 700;
+    }
+
+    &__date {
+      color: $dark;
+    }
+
+    &__date-accent {
+      font-weight: 700;
+      font-size: 16px;
+      color: $accent;
+    }
+
+    &__btn {
+      padding: 19px 25px 17px;
+      border: 1px solid $accent;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: $bl;
+      background-color: $wh;
+      transition: background-color 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $accent;
+      }
+
+      @include r($sm) {
+        padding: 5px 10px;
+        height: 38px;
+      }
+    }
+
+    @include r($lg) {
+      flex-wrap: wrap;
+    }
+
+    @include r($sm) {
+      align-items: center;
+    }
+  }
+
+  @include r($sm) {
+    padding-top: 5px;
+  }
+}
+
 .intro {
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
   background-image: linear-gradient(90deg, #8159c6 0%, #6c7cff 100%);
 
   &::after {
@@ -20,12 +130,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
+    padding-top: 150px;
 
     @include r($lg) {
-      padding-top: 100px;
+      padding-top: 0;
     }
-
     @include r($md) {
       flex-direction: column;
       justify-content: center;
@@ -91,17 +200,18 @@
   }
 
   &__picture {
-    position: relative;
     z-index: 2;
-    margin: auto 0 25px;
     width: 100%;
     max-width: 523px;
+    position: absolute;
+    bottom: 30px;
+    right: 240px;
 
     &::before {
       content: "";
       position: absolute;
       right: -38%;
-      top: -14%;
+      top: 23%;
       z-index: -1;
       width: 784px;
       height: 615px;
@@ -112,20 +222,23 @@
         display: none;
       }
     }
-
+@include r(1500) {
+  bottom: 20px;
+  right: 100px;
+}
+    @include r($xl) {
+  bottom: 10px;
+  right: -47px;
+}
     @include r($md) {
-      margin: 0;
-    }
-  }
-
-  &__img {
-    @include r($md) {
-      position: absolute;
-      right: -60px;
-      bottom: -158px;
-      opacity: 0.6;
-      height: 332px;
+      bottom: 0;
+      right: -173px;
       max-width: 323px;
+    }
+    @include r($sm) {
+      bottom: 0;
+      right: -119px;
+      max-width: 223px;
     }
   }
 
@@ -144,7 +257,7 @@
     }
 
     @include r($md) {
-      margin: 0 auto;
+      margin: 0 auto 10px;
     }
   }
 
@@ -153,13 +266,6 @@
     margin-bottom: 15px;
     font-weight: 700;
     font-size: 24px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 88px;
-      height: 88px;
-    }
 
     @include r($xl) {
       display: inline-block;
